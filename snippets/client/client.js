@@ -1,1 +1,1 @@
-// for general use
+Meteor.subscribe('snippets');
