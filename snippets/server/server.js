@@ -1,3 +1,10 @@
 Meteor.publish('snippets', function(){
-  return Snippets.find({});
+  return Snippets.find({owner:this.userId});
+  //this.userId is the logged in user ID for the publish "session"
 });
+
+Snippets.allow({
+  insert: function(userId,fields){
+    return(userId);
+  }
+})
